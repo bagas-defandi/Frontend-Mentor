@@ -97,7 +97,7 @@ body {
     background-color: var(--light-gray);
     display: grid;
     place-items: center;
-    padding: 1.5rem 1rem;
+    padding: 3rem 1rem;
 }
 
 .flow > * + *{
