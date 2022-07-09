@@ -155,11 +155,11 @@ article {
     padding: 3.1em;
 }
 
-article:first-child {
-    border-radius: 0.5rem 0.5rem 0 0 
+.sedans {
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
-article:last-child {
+.luxury {
     border-radius: 0 0 0.5rem 0.5rem;
 }
 
@@ -195,11 +195,11 @@ article h2 {
 }
 
 @media screen and (min-width: 1000px) {
-    article:first-child {
+    .sedans {
       border-radius: 0.5rem 0 0 0.5rem; 
     }
 
-    article:last-child {
+    .luxury {
       border-radius: 0 0.5rem 0.5rem 0;
     }
 
