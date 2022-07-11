@@ -149,18 +149,12 @@ h1,h2,h3 {
     max-width: 600px;
     margin: 0 auto;
     width: 88%;
+    border-radius: 0.5rem;
+    overflow: hidden;
   }
 
 article {
     padding: 3.1em;
-}
-
-.sedans {
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.luxury {
-    border-radius: 0 0 0.5rem 0.5rem;
 }
 
 article h2 {
@@ -195,14 +189,6 @@ article h2 {
 }
 
 @media screen and (min-width: 1000px) {
-    .sedans {
-      border-radius: 0.5rem 0 0 0.5rem; 
-    }
-
-    .luxury {
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
-
     .container {
         max-width: 1030px;
         display: flex;
