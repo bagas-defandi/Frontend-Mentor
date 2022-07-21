@@ -101,7 +101,7 @@ body {
   font-size: var(--fz-400);
   color: var(--dark-gray);
   display: grid;
-  place-items: center;
+  place-content: center;
   padding: 0 1rem;
 
   background-image: url("images/bg-pattern-top.svg"), url("images/bg-pattern-bottom.svg");
@@ -166,4 +166,15 @@ h1, h2 {
 
 .card__info-col p {
   letter-spacing: 2px;
+}
+
+.attribution {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: .5em;  
+  color: hsl(0, 0%, 20%);
+}
+
+.attribution a {
+  color: hsl(0, 0%, 20%);
 }

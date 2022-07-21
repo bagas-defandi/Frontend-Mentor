@@ -215,7 +215,7 @@ section {
 .attribution { font-size: 0.7rem; text-align: center; margin-top: 1.5em; color: #333;}
 .attribution a { color: hsl(228, 45%, 44%); }
 
-@media screen and (min-width: 536px) {
+@media screen and (min-width: 34em) {
   .container {
     grid-template-areas:
                         'join join'
