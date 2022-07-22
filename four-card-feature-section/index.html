@@ -3,42 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Four card feature section</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  Reliable, efficient delivery
-  Powered by Technology
+  <header class="header container flow">
+    <h1>
+      Reliable, efficient delivery
+      <span>Powered by Technology</span>
+    </h1>
+    <p>
+      Our Artificial Intelligence powered tools use millions of project data points 
+      to ensure that your project is successful
+    </p>
+  </header>
 
-  Our Artificial Intelligence powered tools use millions of project data points 
-  to ensure that your project is successful
-
-  Supervisor
-  Monitors activity to identify project roadblocks
-
-  Team Builder
-  Scans our talent network to create the optimal team for your project
-
-  Karma
-  Regularly evaluates our talent to ensure quality
-
-  Calculator
-  Uses data from past projects to provide better delivery estimates
-
+  <main class="container">
+    <section class="feature">
+      <div class="feature__card flow feature__card-supervisor">
+        <h2>Supervisor</h2>
+        <p>Monitors activity to identify project roadblocks</p>
+        <img src="./images/icon-supervisor.svg" alt="" aria-hidden="true">
+      </div>
+      <div class="feature__card flow feature__card-team">
+        <h2>Team Builder</h2>
+        <p>Scans our talent network to create the optimal team for your project</p>
+        <img src="./images/icon-team-builder.svg" alt="" aria-hidden="true">
+      </div>
+      <div class="feature__card flow feature__card-karma">
+        <h2>Karma</h2>
+        <p>Regularly evaluates our talent to ensure quality</p>
+        <img src="./images/icon-karma.svg" alt="" aria-hidden="true">
+      </div>
+      <div class="feature__card flow feature__card-calculator">
+        <h2>Calculator</h2>
+        <p>Uses data from past projects to provide better delivery estimates</p>
+        <img src="./images/icon-calculator.svg" alt="" aria-hidden="true">
+      </div>
+    </section>
+  </main>
   
   <footer>
     <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
+      Coded by <a class="nowrap" href="https://github.com/bagas-defandi/Frontend-Mentor/tree/master/four-card-feature-section" rel="noopener">Bagas Defandi</a>.
     </p>
   </footer>
 </body>

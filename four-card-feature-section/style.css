@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --clr-red: hsl(0, 78%, 62%);
+    --clr-cyan: hsl(180, 62%, 55%);
+    --clr-orange: hsl(34, 97%, 64%);
+    --clr-blue: hsl(212, 86%, 64%);
+
+    --clr-neutral-700: hsl(234, 12%, 34%);
+    --clr-neutral-400: hsl(229, 6%, 66%);
+    --clr-neutral-200: hsl(0, 0%, 98%);
+
+    --ff-body: 'Poppins', sans-serif;
+
+    --fw-200: 200;
+    --fw-400: 400;
+    --fw-600: 600;
+
+    --fs-body: 0.9375rem;
+    --fs-h1: 1.5rem;
+    --fs-h2: 1.2rem;
+    --fs-body-sm: 0.85rem;
+}
+
+@media (min-width: 29em) {
+    :root {
+        --fs-h1: 2rem;
+    }
+}
+
+@media (min-width: 62.5em) {
+    :root {
+        --fs-h1: 2.25rem;
+    }
+}
+
+
+/*CSS Reset -> https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+
+  /* inherit form elements also remove heading default style*/
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-400);
+    background-color: var(--clr-neutral-200);
+    color: var(--clr-neutral-400);
+
+    padding: 5em 0 1.5em;
+}
+
+/* typography */
+h1,h2,h3 {
+    font-weight: var(--fw-600);
+    color: var(--clr-neutral-700);
+}
+
+/* https://piccalil.li/quick-tip/flow-utility/ */
+/* this will select direct child, if the child have a sibling in front of him*/
+/* 
+  <div class="parent flow">
+    <div class="child"></div>
+    <div class="child"></div> ✔
+    <div class="child"></div> ✔
+    <div class="child"></div> ✔
+  </div>
+*/
+
+/* utility */
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+}
+
+.container {
+    max-width: 71.875rem; /*1150px*/
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* component */
+.header {
+    margin-bottom: 4em;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.header h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-200);
+    max-width: 33.375rem; /* 534px */
+}
+
+.header h1 span {
+    font-weight: var(--fw-600);
+}
+
+.header p {
+    --flow-space: 2em;
+    max-width: 33.375rem;
+}
+
+.feature {
+    display: grid;
+    gap: 1.5rem;
+    place-items: center;
+    grid-template-areas:
+                        'supervisor'
+                        'team'
+                        'karma'
+                        'calculator';
+}
+
+.feature__card {
+    padding: 1.8em;
+    max-width: 21.875rem; /* 350px */
+    border-top: 5px solid var(--clr-border, black);
+    background: white;
+    box-shadow: 0px 10px 18px 0px rgba(0, 0, 0, 0.2);
+    border-radius: .25rem;
+}
+
+.feature__card h2 {
+    font-size: var(--fs-h2);
+}
+.feature__card p {
+    font-size: var(--fs-body-sm);
+}
+
+.feature__card img {
+    --flow-space: 2.2em;
+    margin-left: auto;
+}
+
+.feature__card-supervisor {
+    grid-area: supervisor;
+    --clr-border: var(--clr-cyan);
+}
+.feature__card-team {
+    grid-area: team;
+    --clr-border: var(--clr-red);
+}
+.feature__card-karma {
+    grid-area: karma;
+    --clr-border: var(--clr-orange);
+}
+.feature__card-calculator {
+    grid-area: calculator;
+    --clr-border: var(--clr-blue);
+}
+
+.attribution { font-size: 0.875rem; text-align: center; margin-top: 1.5rem; color: #333;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* layout */
+@media (min-width: 43.75em) {
+    .feature {
+        grid-template-areas:
+                        'supervisor team'
+                        'karma calculator';
+    }
+}
+
+@media (min-width: 62.5em) {
+    .feature {
+        grid-template-areas:
+                        '. team .'
+                        'supervisor team calculator'
+                        'supervisor karma  calculator'
+                        '. karma .';
+    }
+}
