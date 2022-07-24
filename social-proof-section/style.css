@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+:root {
+    --clr-magenta: hsl(300, 43%, 22%);
+    --clr-pink: hsl(333, 80%, 67%);
+
+    --clr-neutral-400: hsl(303, 10%, 53%);
+    --clr-neutral-200: hsl(300, 24%, 96%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+
+    --ff-body: 'League Spartan', sans-serif;
+
+    --fw-400: 400;
+    --fw-500: 500;
+    --fw-700: 700;
+
+    --fs-900: 2.5rem;
+    --fs-700: 1.125rem;
+    --fs-500: 1rem;
+    --fs-400: 0.9375rem;
+}
+
+@media screen and (min-width: 62.5em) {
+  :root {
+    --fs-900: 3.75rem;
+    --fs-700: 1.25rem;
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+
+  /* inherit form elements also remove heading default style*/
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+    font-family: var(--ff-body);
+    font-size: var(--fs-400);
+    font-weight: var(--fw-400);
+    line-height: 1.3;
+    color: var(--clr-neutral-400);
+
+    padding: 5em 0 1.5em;
+
+    background-image: url("./images/bg-pattern-top-mobile.svg"), url("./images/bg-pattern-bottom-mobile.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top left, bottom right; 
+}
+
+h1,h2,h3 {
+    font-weight: var(--fw-700);
+    color: var(--clr-magenta);
+}
+
+/* https://piccalil.li/quick-tip/flow-utility/ */
+/* this will select direct child, if the child have a sibling in front of him*/
+/* 
+  <div class="parent flow">
+    <div class="child"></div>
+    <div class="child"></div> ✔
+    <div class="child"></div> ✔
+    <div class="child"></div> ✔
+  </div>
+*/
+
+/* utility */
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+}
+
+.container {
+    max-width: 71.875rem; /* 1150px */
+    margin: 0 auto;
+    padding: 0 1.4375rem; /*23px*/
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.text-pink {
+  color: var(--clr-pink);
+}
+
+/* component */
+.products {
+    text-align: center;
+}
+
+.products__text {
+  display: grid;
+  place-items: center;
+}
+
+.products__text h1 {
+  font-size: var(--fs-900);
+  line-height: 0.8;
+  max-width: calc(505rem / 16);
+}
+  
+.products__text p {
+  --flow-xspace: 1.25em;
+  font-size: var(--fs-700);
+  max-width: calc(505rem / 16);
+}
+
+.products__rating {
+    --flow-space: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.products__rating-list {
+    padding: 0.8em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--clr-neutral-200);
+    border-radius: .5rem;
+    max-width: calc(450rem / 16);
+    width: 100%;
+}
+
+.star-container {
+    display: flex;
+    gap: .5rem;
+}
+
+.text-rating {
+  --flow-space: .5em;
+  font-weight: var(--fw-700);
+  color: var(--clr-magenta);
+  font-size: 1.125rem;
+}
+
+.testimonials {
+  --flow-space: 3.25em;
+}
+
+.testimonials__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.testimonials__card {
+  background-color: var(--clr-magenta);
+  padding: 2.2rem;
+  color: var(--clr-neutral-100);
+  border-radius: .5rem;
+  max-width: calc(450rem / 16);
+}
+
+.testimonials__card img {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.testimonials__card figure {
+  display: flex;
+  align-items: center;
+  gap: 1.3125rem;
+}
+
+.testimonials__card figcaption {
+  font-weight: var(--fw-500);
+}
+
+.testimonials__card blockquote {
+  --flow-space: 1.75em;
+  font-size: var(--fs-500);
+}
+
+.attribution {
+  font-size: .875rem;
+  margin-top: 1.5em;
+  text-align: center;
+  color: #333;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 48em) {
+  .products__rating {
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 62.5em) {
+  body {
+    background-image: url("./images/bg-pattern-top-desktop.svg"), url("./images/bg-pattern-bottom-desktop.svg");
+    padding: 7em 0 1.5em;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+  }
+
+  .products__text {
+    text-align: left;
+  }
+
+  .products__text p {
+    --flow-space: 1.5em;
+  }
+
+  .products__rating {
+    --flow-space: 2em;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .products__rating-list {
+    flex-direction: row;
+    gap: 1.125rem;
+    padding: .9em 2.4em;
+  }
+
+  .text-rating {
+    --flow-space: 0.25em;
+  }
+  
+  .testimonials {
+    --flow-space: 1.75em;
+  }
+
+  .testimonials__container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .testimonials__card {
+    max-width: calc(350rem / 16);
+  }
+  
+  /* move item */
+  .products__rating-list:first-child {
+    margin-right: 6em;
+  }
+  
+  .products__rating-list:nth-child(2) {
+    margin-right: 3em;
+  }
+  
+  .testimonials__card:nth-child(2) {
+    margin-top: 3em;
+  }
+  
+  .testimonials__card:last-child {
+    margin-top: 6em;
+  }
+}
