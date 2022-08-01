@@ -4,7 +4,7 @@
   --clr-light-gray: hsl(212, 45%, 89%);
 
 
-  --fs-h1: 1.75rem;
+  --fs-h1: 1.5rem;
 
   --ff-body: 'Outfit', sans-serif;
 
@@ -92,9 +92,10 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: calc(1200rem/ 16);
   margin: 0 auto;
-  width: 90%;
+  /* width: 90%; */
+  padding: 0 1.5625rem;
 }
 
 .flow > * + * {
@@ -120,7 +121,7 @@ h2 {
 }
 
 header {
-  padding: 1em;
+  padding: 1em 0;
 }
 
 ul {
@@ -128,7 +129,7 @@ ul {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   place-items: center;
   gap: 1.5rem;
-  padding: 1em;
+  padding: 1em 0;
 }
 
 @media (min-width: 23em) {
