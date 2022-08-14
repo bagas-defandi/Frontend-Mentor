@@ -46,7 +46,11 @@ useDark.addListener(function(evt) {
 });
 
 // Initial setting
-toggleDarkMode(localStorage.getItem("dark-mode") == "true");
+if (localStorage.getItem("dark-mode") === null) {
+  toggleDarkMode(darkModeState); // first time user visit site
+} else {
+  toggleDarkMode(localStorage.getItem("dark-mode") == "true");
+}
 
 // Listen for switch change
 switcher.addEventListener("change", switchListener);
