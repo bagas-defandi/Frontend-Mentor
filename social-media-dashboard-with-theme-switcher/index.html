@@ -3,85 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | [Challenge Name Here]</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Frontend Mentor | Social Media Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-  Social Media Dashboard
-  Total Followers: 23,004
-
-  Dark Mode
-
+  <header class="header">
+    <div class="container">
+      <div class="header__text">
+        <h1>Social Media Dashboard</h1>
+        <p>Total Followers: 23,004</p>
+      </div>
+      <div class="header__theme-wrapper">
+        <label for="theme" class="theme" aria-label="change theme">
+          <span class="theme--text">Dark Mode</span>
+          <input type="checkbox" id="theme">
+          <span class="theme--btn"></span>
+        </label>
+      </div>
+    </div>
+  </header>
   
+  <main>
+    <section class="overview">
+      <div class="container">
+        <div class="overview__card flow overview__card--facebook ">
+          <div class="overview__account">
+            <img src="./images/icon-facebook.svg" alt="" aria-hidden="true">
+            <p class="fs-200">@nathanf</p>
+          </div>
+          <div class="overview__details">
+            <p class="fs-900 fw-700 letter-spacing-1">1987</p>
+            <p class="fs-200 text-uppercase letter-spacing-2 text-1">Followers</p>
+          </div>
+          <div class="progress">
+            <img src="./images/icon-up.svg" alt="" aria-hidden="true" width="8" height="4">
+            <p class="fs-200 text-green">12 Today</p>
+          </div>
+        </div>
+        <div class="overview__card flow overview__card--twitter">
+          <div class="overview__account">
+            <img src="./images/icon-twitter.svg" alt="" aria-hidden="true">
+            <p class="fs-200">@nathanf</p>
+          </div>
+          <div class="overview__details">
+            <p class="fs-900 fw-700 letter-spacing-1">1044</p>
+            <p class="fs-200 text-uppercase letter-spacing-2 text-1">Followers</p>
+          </div>
+          <div class="progress">
+            <img src="./images/icon-up.svg" alt="" aria-hidden="true" width="8" height="4">
+            <p class="fs-200 text-green">99 Today</p>
+          </div>
+        </div>
+        <div class="overview__card flow overview__card--instagram">
+          <div class="overview__account">
+            <img src="./images/icon-instagram.svg" alt="" aria-hidden="true">
+            <p class="fs-200">@realnathanf</p>
+          </div>
+          <div class="overview__details">
+            <p class="fs-900 fw-700 letter-spacing-1">11k</p>
+            <p class="fs-200 text-uppercase letter-spacing-2 text-1">Followers</p>
+          </div>
+          <div class="progress">
+            <img src="./images/icon-up.svg" alt="" aria-hidden="true" width="8" height="4">
+            <p class="fs-200 text-green">1099 Today</p>
+          </div>
+        </div>
+        <div class="overview__card flow overview__card--youtube">
+          <div class="overview__account">
+            <img src="./images/icon-youtube.svg" alt="" aria-hidden="true">
+            <p class="fs-200">Nathan F.</p>
+          </div>
+          <div class="overview__details">
+            <p class="fs-900 fw-700 letter-spacing-1">8239</p>
+            <p class="fs-200 text-uppercase letter-spacing-2  text-1">Subscribers</p>
+          </div>
+          <div class="progress">
+            <img src="./images/icon-down.svg" alt="" aria-hidden="true" width="8" height="4">
+            <p class="fs-200 text-red">144 Today</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  @nathanf
-  1987
-  Followers
-  12 Today
-
-  @nathanf
-  1044
-  Followers
-  99 Today
-
-  @realnathanf
-  11k
-  Followers
-  1099 Today
-
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
-
-
-
-  Overview - Today
-
-  Page Views
-  87
-  3%
-
-  Likes
-  52
-  2%
-
-  Likes
-  5462
-  2257%
-
-  Profile Views
-  52k
-  1375%
-
-  Retweets
-  117
-  303%
-
-  Likes
-  507
-  553%
-
-  Likes
-  107
-  19%
-
-  Total Views
-  1407
-  12%
+    <section class="today">
+      <div class="container">
+        <h2>Overview - Today</h2>
+        <div class="today-card-container">
+          <div class="today__card">
+            <p class="fs-300 fw-700 text-1">Page Views</p>
+            <img src="./images/icon-facebook.svg" alt="" aria-hidden="true">
+            <p class="fs-700 fw-700">87</p>
+            <div class="progress progress--today">
+              <img src="./images/icon-up.svg" alt="" aria-hidden="true" width="8" height="4">
+              <p class="fs-200 text-green"> 3%</p>
+            </div>
+          </div>
+          <div class="today__card">
+            <p class="fs-300 fw-700 text-1">Likes</p>
+            <img src="./images/icon-facebook.svg" alt="" aria-hidden="true">
+            <p class="fs-700 fw-700">52</p>
+            <div class="progress progress--today">
+              <img src="./images/icon-down.svg" alt="" aria-hidden="true" width="8" height="4">
+              <p class="fs-200 text-red">2%</p>
+            </div>
+          </div>
+          <div class="today__card">
+            <p class="fs-300 fw-700 text-1">Likes</p>
+            <img src="./images/icon-instagram.svg" alt="" aria-hidden="true">
+            <p class="fs-700 fw-700">5462</p>
+            <div class="progress progress--today">
+              <img src="./images/icon-up.svg" alt="" aria-hidden="true" width="8" height="4">
+              <p class="fs-200 text-green">2257%</p>
+            </div>
+          </div>
+          <div class="today__card">
+            <p class="fs-300 fw-700 text-1">Profile Views</p>
+            <img src="./images/icon-instagram.svg" alt="" aria-hidden="true">
+            <p class="fs-700 fw-700">52K</p>
+            <div class="progress progress--today">
+              <img src="./images/icon-up.svg" alt="" aria-hidden="true" width="8" height="4">
+              <p class="fs-200 text-green">1375%</p>
+            </div>
+          </div>
+          <div class="today__card">
+            <p class="fs-300 fw-700 text-1">Retweets</p>
+            <img src="./images/icon-twitter.svg" alt="" aria-hidden="true">
+            <p class="fs-700 fw-700">117</p>
+            <div class="progress progress--today">
+              <img src="./images/icon-up.svg" alt="" aria-hidden="true" width="8" height="4">
+              <p class="fs-200 text-green">303%</p>
+            </div>
+          </div>
+          <div class="today__card">
+            <p class="fs-300 fw-700 text-1">Likes</p>
+            <img src="./images/icon-twitter.svg" alt="" aria-hidden="true">
+            <p class="fs-700 fw-700">507</p>
+            <div class="progress progress--today">
+              <img src="./images/icon-up.svg" alt="" aria-hidden="true" width="8" height="4">
+              <p class="fs-200 text-green">553%</p>
+            </div>
+          </div>
+          <div class="today__card">
+            <p class="fs-300 fw-700 text-1">Likes</p>
+            <img src="./images/icon-youtube.svg" alt="" aria-hidden="true">
+            <p class="fs-700 fw-700">107</p>
+            <div class="progress progress--today">
+              <img src="./images/icon-down.svg" alt="" aria-hidden="true" width="8" height="4">
+              <p class="fs-200 text-red">19%</p>
+            </div>
+          </div>
+          <div class="today__card">
+            <p class="fs-300 fw-700 text-1">Total Views</p>
+            <img src="./images/icon-youtube.svg" alt="" aria-hidden="true">
+            <p class="fs-700 fw-700">1407</p>
+            <div class="progress progress--today">
+              <img src="./images/icon-down.svg" alt="" aria-hidden="true" width="8" height="4">
+              <p class="fs-200 text-red">12%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/bagas-defandi" target="_blank" rel="noopener">Bagas Defandi</a>.
+  </footer>
 </body>
 </html>
