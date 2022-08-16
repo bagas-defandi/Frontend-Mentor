@@ -156,9 +156,20 @@ body {
     color: var(--clr-text-2);
 }
 
+body::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 30%;
+  background-color: var(--clr-top-bg);
+  z-index: -1;
+  border-radius: 0 0 .75rem .75rem;
+}
+
 /* componenent */
 .header {
-  padding: 2.25rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2.5rem;
 }
 
 .header .container {
@@ -210,6 +221,7 @@ body {
   user-select: none;
   color: var(--clr-text-1);
   font-weight: var(--fw-700);
+  font-size: var(--fs-300);
 }
 
 .theme--btn {
@@ -367,6 +379,9 @@ body {
 }
 
 @media (min-width: 62.5em) {
+  body::before {
+    height: 40%;
+  }
   .overview .container {
     grid-template-columns: repeat(4, 1fr);
   }
