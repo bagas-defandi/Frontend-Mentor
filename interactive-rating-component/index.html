@@ -3,47 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | Interactive rating component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- Rating state start -->
+  <main class="main">
+    <h1 class="sr-only">Interactive Rating Component</h1>
+    <!-- Rating state start -->
+    <div class="card-container">
 
-  How did we do?
+      <article class="card card--rating flow">
+        <div class="star">
+          <img src="./images/icon-star.svg" alt="" aria-hidden="true">
+        </div>
+        <h2>How did we do?</h2>
+        <p> Please let us know how we did with your support request. All feedback is appreciated 
+          to help us improve our offering!
+        </p>
+        <form style="--flow-space: 1.75rem;">
+          <input class="radio" type="radio" name="chooseNumber" id="number1" value="1">
+          <label for="number1">1</label>
+          <input class="radio" type="radio" name="chooseNumber" id="number2" value="2">
+          <label for="number2">2</label>
+          <input class="radio" type="radio" name="chooseNumber" id="number3" value="3">
+          <label for="number3">3</label>
+          <input class="radio" type="radio" name="chooseNumber" id="number4" value="4">
+          <label for="number4">4</label>
+          <input class="radio" type="radio" name="chooseNumber" id="number5" value="5">
+          <label for="number5">5</label> 
+          <button class="btn-submit" type="submit">Submit</button>
+        </form>
+      </article>
+        <!-- Rating state end -->
+    
+        <!-- Thank you state start -->
+        <article class="card card--thanks flow text-center">
+          <img src="./images/illustration-thank-you.svg" alt="" aria-hidden="true">
+          <P class="selected">You selected - out of 5</P>
+          <h2>Thank You!</h2>
+          <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+            don’t hesitate to get in touch!
+          </p>
+        </article>
+        <!-- Thank you state end -->
+    </div>
+  </main>
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
-
-  1 2 3 4 5
-
-  Submit
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  You selected <!-- Add rating here --> out of 5
-
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
-
-  <!-- Thank you state end -->
-
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
