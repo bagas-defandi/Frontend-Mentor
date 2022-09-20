@@ -3,38 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | FAQ Accordion Card</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  How many team members can I invite?
-  You can invite up to 2 additional users on the Free plan. There is no limit on 
-  team members for the Premium plan.
 
-  What is the maximum file upload size?
-  No more than 2GB. All files in your account must fit your allotted storage space.
+  <main class="main">
+    <div class="container">
+      <h1 class="sr-only">Faq accordion card</h1>
+      <section class="image">
+        <picture class="image-wrapper">
+          <source media="(min-width: 1000px)" srcset="./images/illustration-woman-online-desktop.svg">
+          <img src="./images/illustration-woman-online-mobile.svg" alt="" aria-hidden="true" class="illustration">
+        </picture>
+      </section>
+  
+      <section class="faq">
+        <h2 class="title text-uppercase fw-700">Faq</h2>
+        <div class="accordion">
+          <details class="accordion__item">
+            <summary class="accordion__title">
+              How many team members can I invite?
+              <img src="./images/icon-arrow-down.svg" alt="" class="arrow-icon">
+            </summary>
+            <p>You can invite up to 2 additional users on the Free plan. There is no limit on 
+              team members for the Premium plan.
+            </p>
+          </details>
+          <details class="accordion__item" open>
+            <summary class="accordion__title">
+              What is the maximum file upload size?
+              <img src="./images/icon-arrow-down.svg" alt="" class="arrow-icon">
+            </summary>
+            <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__title">
+              How do I reset my password?
+              <img src="./images/icon-arrow-down.svg" alt="" class="arrow-icon">
+            </summary>
+            <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+              A reset link will be emailed to you.
+            </p>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__title">
+              Can I cancel my subscription?
+              <img src="./images/icon-arrow-down.svg" alt="" class="arrow-icon">
+            </summary>
+            <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__title">
+              Do you provide additional support?
+              <img src="./images/icon-arrow-down.svg" alt="" class="arrow-icon">
+            </summary>
+            <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+          </details>
+        </div>
+      </section>
+    </div>
+  </main>
 
-  How do I reset my password?
-  Click “Forgot password” from the login page or “Change password” from your profile page.
-  A reset link will be emailed to you.
-
-  Can I cancel my subscription?
-  Yes! Send us a message and we’ll process your request no questions asked.
-
-  Do you provide additional support?
-  Chat and email support is available 24/7. Phone lines are open during normal business hours.
-
-  <div class="attribution">
+  <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="https://github.com/bagas-defandi">Bagas Defandi</a>.
+  </footer>
 </body>
 </html>

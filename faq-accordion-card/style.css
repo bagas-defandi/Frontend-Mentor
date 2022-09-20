@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  --clr-desaturated-blue: hsl(238, 29%, 16%);
+  --clr-bg-blue: hsl(240, 73%, 65%);
+  --clr-bg-violet: hsl(273, 75%, 66%);
+  --clr-red: hsl(14, 88%, 65%);
+
+  --clr-neutral-900: hsl(237, 12%, 33%);
+  --clr-neutral-500: hsl(240, 6%, 50%);
+  --clr-neutral-100: hsl(240, 5%, 91%);
+
+  --ff-body: 'Kumbh Sans', sans-serif;
+  --fw-400: 400;
+  --fw-700: 700;
+
+  --fs-200: .75rem;
+  --fs-300: .875rem;
+  --fs-400: 1rem;
+  --fs-500: 2rem;
+}
+/* CSS Reset -> https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+
+  /* inherit form elements also remove heading default style*/
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* utility */
+/* Flow utility -> https://piccalil.li/quick-tip/flow-utility/ */
+.flow > * + * {
+    margin-top: var(--flow-space, 1em);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.text-uppercase { text-transform: uppercase; }
+.text-center {text-align: center;}
+.fw-700 { font-weight: var(--fw-700); }
+
+/* general */
+body {
+  font-family: var(--ff-body);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-400);
+  line-height: 1.4;
+  background-image: linear-gradient(to bottom, var(--clr-bg-violet), var(--clr-bg-blue));
+  
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  padding-top: 6rem;
+}
+
+/* component */
+.main {
+  background-color: #ffffff;
+  border-radius: 1.5rem;
+  width: 100%;
+  max-width: calc(328rem / 16);
+
+  background-image: url("./images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+
+.image {
+  margin-top: -6.75rem;
+}
+
+.image-wrapper {
+  display: grid;
+  justify-content: center;
+}
+
+.illustration {
+  width: calc(240rem / 16);
+  height: calc(180rem / 16);
+}
+
+.faq {
+  padding: 0 1.5rem;
+  padding-bottom: 2.5rem;
+  padding-top: 2.125rem;
+}
+
+.title {
+  font-size: var(--fs-500);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.accordion {
+  font-size: var(--fs-200);
+  color: var(--clr-neutral-900);
+}
+
+.accordion__item > .accordion__title {
+  list-style: none;
+}
+
+.accordion__item > .accordion__title::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__item > .accordion__title {
+  cursor: pointer;
+}
+
+.accordion__item {
+  padding: 1rem 0;
+}
+
+.accordion__item:not(:last-child) {
+  border-bottom: 1px solid var(--clr-neutral-100);
+}
+
+.accordion__item p{
+  color: var(--clr-neutral-500);
+  margin-top: .5rem;
+  max-width: calc(245rem / 16);
+}
+
+.accordion__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion__title:hover {
+  color: var(--clr-red);
+}
+
+.arrow-icon {
+  transition: transform 150ms ease-in;
+}
+
+.accordion__item[open] .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.accordion__item[open] .accordion__title {
+  font-weight: var(--fw-700);
+}
+
+@keyframes open {
+  0% {opacity: 0; transform: translateY(-20px)}
+  100% {opacity: 1; transform: translateY(0px)}
+}
+
+.accordion__item[open] .accordion__title ~ * {
+  animation: open 300ms ease-in-out;
+}
+
+.attribution { font-size: var(--fs-200); text-align: center;}
+.attribution a { color: var(--clr-neutral-100); }
+
+@media (min-width: 62.5em) {
+  body {
+    padding-top: 2rem;
+  }
+
+  .main {
+    position: relative;
+    max-width: calc(920rem / 16);
+    background-image: url("./images/bg-pattern-desktop.svg");
+    background-position: -35.5rem 65%;
+  }
+  
+  .container {
+    position: relative;
+    height: calc(512rem / 16);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+  }
+
+  .title {
+    margin-top: 1rem;
+    text-align: start;
+    margin-bottom: 1rem;
+  }
+
+  .image {
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  /* box desktop */
+  main::before {
+    content: url("./images/illustration-box-desktop.svg");
+    position: absolute;
+    left: -10.5%;
+    top: 39.5%;
+    z-index: 1;
+  } 
+
+  .illustration {
+    width: calc(472rem / 16);
+    height: calc(359rem / 16);
+    position: absolute;
+    left: -9.5%;
+    top: 14%;
+  }
+
+  .faq {
+    padding-left: 2.25rem;
+    padding-top: 3.25rem;
+    padding-bottom: 5rem;
+    padding-right: 4.75rem; 
+
+    /* remove scrollbar */
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+  }
+
+  /* remove scrollbar */
+  .faq::-webkit-scrollbar {
+    display: none;
+  }
+
+  .accordion {
+    max-width: calc(335rem / 16);
+  }
+
+  .accordion__title {
+    font-size: var(--fs-300);
+  }
+
+  .accordion__item p {
+    max-width: calc(315rem / 16);
+  }
+}
