@@ -122,7 +122,7 @@ svg {
 /* general */
 .container {
     margin: 0 auto;
-    max-width: calc(1270rem / 16);
+    max-width: calc(1290rem / 16);
     padding: 0 1.375rem;
 }
 
@@ -257,13 +257,13 @@ h1,h2,h3 {
   height: 100%;
 }
 
+.learns picture {
+  height: 100%;
+}
+
 .learn {
     padding-block: 3.125rem;
     text-align: center;
-}
-
-.learn img {
-  height: 100%;
 }
 
 .learn h2 {
@@ -275,7 +275,7 @@ h1,h2,h3 {
 
 .learn p {
   font-size: var(--fz-500);
-  line-height: 1.8;
+  line-height: 1.6;
   --flow-space: 1.75rem;
   color: var(--clr-neutral-400);
 }
@@ -564,6 +564,15 @@ h1,h2,h3 {
   .learn {
     padding-block: 9.375rem;
     padding-inline: 9.375rem 6.25rem;
+  }
+
+  .learn--stand-out {
+    padding-block: 10rem 11rem;
+    padding-inline: 6.5rem 9rem;
+  }
+
+  .learn--stand-out h2 {
+    max-width: calc(400rem / 16);
   }
 
   .testimonials {
