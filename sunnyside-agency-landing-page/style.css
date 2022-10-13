@@ -536,7 +536,7 @@ h1,h2,h3 {
 }
 
 
-@media (min-width: 1200px) {
+@media (min-width: 75em) {
   .hero h1 {
     font-size: 3.36rem;
     letter-spacing: 12px;
@@ -568,7 +568,7 @@ h1,h2,h3 {
 
   .testimonials {
     padding-top: 9rem;
-    padding-bottom: 9rem;
+    padding-bottom: 6rem;
   }
 
   .testimonials h2 {
@@ -578,7 +578,7 @@ h1,h2,h3 {
 
   .testimonial-wrapper {
     grid-template-columns: repeat(3, 1fr);
-    width: 1145px;
+    max-width: calc(1145rem / 16);
     margin: 0 auto;
   }
 
