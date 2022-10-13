@@ -562,21 +562,12 @@ h1,h2,h3 {
   }
 
   .learn {
-    padding-block: 9.375rem;
-    padding-inline: 9.375rem 6.25rem;
-  }
-
-  .learn--stand-out {
-    padding-block: 10rem 11rem;
-    padding-inline: 6.5rem 9rem;
-  }
-
-  .learn--stand-out h2 {
-    max-width: calc(400rem / 16);
+    padding-block: 9rem;
+    padding-inline: 9.375rem 7.25rem;
   }
 
   .testimonials {
-    padding-top: 9.7rem;
+    padding-top: 9rem;
     padding-bottom: 9rem;
   }
 
@@ -587,6 +578,8 @@ h1,h2,h3 {
 
   .testimonial-wrapper {
     grid-template-columns: repeat(3, 1fr);
+    width: 1145px;
+    margin: 0 auto;
   }
 
   .testimonial p {
